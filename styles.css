@@ -669,10 +669,21 @@ html.no-splash .splash { display: none; }
   .about__badge { right: 8px; bottom: 16px; }
 }
 
-/* ---------- Accessibilité : mouvement réduit ---------- */
+/* ---------- Accessibilité : mouvement réduit ----------
+   Quand le système demande moins de mouvement (Windows « Effets d'animation » désactivé, macOS « Réduire les
+   animations »…), on garde l'intro mais en fondus d'opacité uniquement : aucun déplacement, zoom, flou ni pulsation.
+   Les @keyframes redéfinis ici priment sur ceux du haut du fichier (dernière définition applicable). */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .splash { display: none; }
-  .rise, .nav, .badge__dot { animation: none; }
-  .btn, .faq__a, .faq__q-text { transition: none; }
+  @keyframes riseIn      { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes riseInTitle { from { opacity: .01; } to { opacity: 1; } }
+  @keyframes riseInFlat  { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes navIn       { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes splashMark  { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes dotPop      { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes splashSub   { from { opacity: 0; } to { opacity: 1; } }
+  .badge__dot { animation: none; }
+  .btn { transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s; }
+  .btn:hover { transform: none; }
+  .faq__a, .faq__q-text { transition: none; }
 }
