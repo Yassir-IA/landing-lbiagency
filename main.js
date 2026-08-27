@@ -11,6 +11,20 @@
     a.setAttribute('href', CALENDLY_URL);
   });
 
+  /* ---- Splash : une fois le fondu terminé, on retire le calque du DOM. Un calque fixe plein écran, même
+     invisible (visibility:hidden + pointer-events:none), peut encore intercepter les taps destinés à un
+     iframe sur iOS Safari (vidéo hero « figée », impossible à toucher). Garde-fou : 5 s. */
+  var splash = document.querySelector('.splash');
+  if (splash) {
+    var removeSplash = function () { if (splash.parentNode) splash.parentNode.removeChild(splash); };
+    if (document.documentElement.classList.contains('no-splash') || getComputedStyle(splash).animationName === 'none') {
+      removeSplash();
+    } else {
+      splash.addEventListener('animationend', function (event) { if (event.target === splash) removeSplash(); });
+      setTimeout(removeSplash, 5000);
+    }
+  }
+
   /* ---- Entrées animées : une fois l'animation terminée, on la retire (classe .is-in, voir styles.css).
      État final identique ; libère les calques du compositeur et force un repaint (les éléments animés en
      opacité 0 → 1 ne sont sinon jamais « vus » par la mesure du LCP). Le h1 a son propre traitement en CSS. */
