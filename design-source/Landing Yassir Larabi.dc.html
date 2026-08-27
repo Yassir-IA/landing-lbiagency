@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>Yassir Larabi | Votre département IA. Sans recruter.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+body { margin: 0; background-color: #04202B; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.75 0 0 0 0 0.92 0 0 0 0 0.96 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); font-family: 'Quicksand', sans-serif; color: #EAF6F9; }
+a { color: #4FCBE0; text-decoration: none; }
+a:hover { color: #8FE2F0; }
+@keyframes pulseGlow { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes riseIn { from { opacity: 0; transform: translateY(26px) scale(.985); filter: blur(10px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes navIn { from { opacity: 0; transform: translateY(-16px); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes splashMark { from { opacity: 0; transform: translateY(16px) scale(.96); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes dotPop { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
+@keyframes splashSub { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes splashFade { to { opacity: 0; visibility: hidden; } }
+</style>
+</helmet>
+
+<div aria-hidden="true" style="position:fixed; inset:0; z-index:300; pointer-events:none; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#03151D,#052430); animation:splashFade .8s cubic-bezier(.65,0,.35,1) 1.05s both;">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:14px; animation:splashMark .9s cubic-bezier(.22,1,.36,1) both;">
+    <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(44px,7vw,76px); color:#EAF6F9; line-height:1;">yassir<span style="display:inline-block; color:#3FC5DE; animation:dotPop .5s cubic-bezier(.34,1.56,.64,1) .4s both;">.</span></div>
+    <div style="font-size:15px; font-weight:600; letter-spacing:.4px; color:#8FB0BC; animation:splashSub .6s ease-out .5s both;">Des systèmes en production, pas des démos.</div>
+  </div>
+</div>
+<div style="position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:0 20px;">
+  <div style="animation:navIn .8s cubic-bezier(.22,1,.36,1) 1.2s both; display:flex; align-items:center; justify-content:space-between; gap:24px; width:100%; max-width:1280px; background:rgba(5,34,45,.78); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:999px; padding:12px 14px 12px 30px; border:1px solid rgba(63,197,222,.22); box-shadow:0 12px 36px rgba(0,10,15,.5);">
+    <a href="#hero" style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:26px; color:#EAF6F9; line-height:1;">yassir<span style="color:#4FCBE0;">.</span></a>
+    <div style="display:flex; align-items:center; gap:30px; font-weight:600; font-size:17px;">
+      <a href="#methode" style="color:#EAF6F9;" style-hover="color:#4FCBE0;">La méthode</a>
+      <a href="#offres" style="color:#EAF6F9;" style-hover="color:#4FCBE0;">Mes offres</a>
+      <a href="#faq" style="color:#EAF6F9;" style-hover="color:#4FCBE0;">FAQ</a>
+    </div>
+    <a href="{{ calendly }}" style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:18px; color:#fff; background:linear-gradient(180deg,#3FC5DE 0%,#0F7E9E 100%); border-radius:999px; padding:13px 28px; box-shadow:0 8px 20px rgba(15,126,158,.35); display:inline-flex; align-items:center; gap:10px;" style-hover="transform:translateY(-1px); box-shadow:0 10px 24px rgba(15,126,158,.45); color:#fff;">Je réserve mon diagnostic <span style="display:inline-block; width:10px; height:10px; border:3px solid #fff; border-radius:50%;"></span></a>
+  </div>
+</div>
+
+<div style="position:relative; z-index:0;">
+<div aria-hidden="true" style="position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(1000px 720px at 76% 1%, rgba(23,124,155,.22) 0%, rgba(23,124,155,0) 64%), radial-gradient(820px 620px at -6% 12%, rgba(63,197,222,.07) 0%, rgba(63,197,222,0) 60%), radial-gradient(920px 700px at 106% 28%, rgba(15,126,158,.10) 0%, rgba(15,126,158,0) 62%), radial-gradient(820px 640px at 8% 45%, rgba(63,197,222,.06) 0%, rgba(63,197,222,0) 60%), radial-gradient(960px 760px at 96% 62%, rgba(23,124,155,.10) 0%, rgba(23,124,155,0) 62%), radial-gradient(880px 700px at 2% 79%, rgba(15,126,158,.08) 0%, rgba(15,126,158,0) 62%), radial-gradient(1150px 820px at 55% 100%, rgba(15,126,158,.13) 0%, rgba(15,126,158,0) 66%), linear-gradient(180deg, #03151D 0%, #052430 10%, #04202B 50%, #052532 85%, #03181F 100%);"></div>
+<section id="hero" data-screen-label="S1 Hero" style="padding:170px 24px 0; text-align:center;">
+  <div style="max-width:1160px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:26px;">
+    <div style="animation:riseIn .8s cubic-bezier(.22,1,.36,1) 1.3s both; display:inline-flex; align-items:center; gap:10px; border:2px solid rgba(191,232,242,.5); border-radius:999px; padding:9px 22px; font-weight:700; font-size:16px; background:rgba(6,42,56,.5); color:#EAF6F9;">
+      <span style="width:9px; height:9px; border-radius:50%; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); display:inline-block; animation:pulseGlow 2.4s ease-in-out infinite;"></span>
+      Des systèmes en production, pas des démos.
+    </div>
+    <div style="animation:riseIn .8s cubic-bezier(.22,1,.36,1) 1.4s both; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; font-size:18px; font-weight:700; color:#EAF6F9;">
+      <span>AI Manager chez Smart Funnel</span>
+      <span style="color:#4FCBE0;">•</span>
+      <span>+100&nbsp;000 appels traités par mes agents IA</span>
+    </div>
+    <h1 style="animation:riseIn .9s cubic-bezier(.22,1,.36,1) 1.5s both; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(46px,6.4vw,80px); line-height:1.08; margin:6px 0 0; letter-spacing:-0.5px;">
+      Votre département IA.<br>
+      <span style="display:inline-block; border:3px solid #7FD8E8; border-radius:30px; padding:0 30px 8px; margin-top:14px;">Sans recruter.</span>
+    </h1>
+    <p style="animation:riseIn .9s cubic-bezier(.22,1,.36,1) 1.65s both; font-size:clamp(18px,2vw,21px); font-weight:500; line-height:1.55; color:#B6D2DB; max-width:720px; margin:8px 0 0;">Je conçois, je déploie et j'opère les systèmes IA de votre entreprise. Des heures récupérées et des clients servis, pas des POC.</p>
+    <div style="animation:riseIn .9s cubic-bezier(.22,1,.36,1) 1.78s both; display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+      <a href="{{ calendly }}" style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:#052430; background:#EAF6F9; border-radius:999px; padding:17px 36px; box-shadow:0 12px 28px rgba(0,10,15,.45);" style-hover="background:#fff; color:#052430; transform:translateY(-1px);">Réserver mon diagnostic (30&nbsp;min)</a>
+      <a href="#methode" style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:#EAF6F9; border:2px solid rgba(234,246,249,.65); border-radius:999px; padding:15px 34px; background:rgba(6,42,56,.35);" style-hover="background:#EAF6F9; color:#052430;">Découvrir la méthode</a>
+    </div>
+    <p style="animation:riseIn .9s cubic-bezier(.22,1,.36,1) 1.88s both; font-size:15px; font-weight:600; color:#8FB0BC; margin:2px 0 0;">Vous repartez avec votre roadmap d'automatisation priorisée, qu'on travaille ensemble ou non.</p>
+    <div style="animation:riseIn 1s cubic-bezier(.22,1,.36,1) 2s both; width:100%; max-width:1080px; margin-top:34px;">
+      <div style="position:relative; border-radius:28px; overflow:hidden; box-shadow:0 30px 70px rgba(0,10,15,.55); background:#062A38; border:1px solid rgba(63,197,222,.25);">
+        <div style="position:relative; aspect-ratio:16/9;">
+          <iframe loading="lazy" title="Gumlet video player" src="https://play.gumlet.io/embed/6a8f03844fcbc8642ba6184d?autoplay=true&muted=true&preload=true" referrerPolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;" style="border:none; position:absolute; top:0; left:0; height:100%; width:100%;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="S2 Preuves flash" style="padding:96px 24px 60px;">
+  <div style="max-width:1160px; margin:0 auto; text-align:center;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(30px,3.6vw,44px); color:#4FCBE0; margin:0 0 58px;">Des repères concrets, vérifiables.</h2>
+    <div style="display:flex; justify-content:center; align-items:center; gap:34px; flex-wrap:wrap;">
+      <div style="transform:rotate(-6deg); background:#0A3849; border:2px solid rgba(191,232,242,.4); border-radius:22px; padding:36px 30px; width:280px; box-shadow:0 16px 36px rgba(0,10,15,.4);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:46px; line-height:1;">200&nbsp;K€<span style="font-size:24px;">/mois</span></div>
+        <div style="font-weight:600; font-size:16px; color:#B6D2DB; margin-top:10px;">Smart Funnel, l'agence IA où j'opère comme AI Manager</div>
+      </div>
+      <div style="background:linear-gradient(180deg,#3FC5DE 0%,#0F7E9E 100%); border-radius:22px; padding:46px 34px; width:300px; box-shadow:0 22px 48px rgba(15,126,158,.40);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:54px; line-height:1; color:#fff;">+100&nbsp;000</div>
+        <div style="font-weight:700; font-size:17px; color:rgba(255,255,255,.92); margin-top:10px;">appels traités par mes agents IA vocaux</div>
+      </div>
+      <div style="transform:rotate(6deg); background:#0A3849; border:2px solid rgba(191,232,242,.4); border-radius:22px; padding:36px 30px; width:280px; box-shadow:0 16px 36px rgba(0,10,15,.4);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:46px; line-height:1;">2023</div>
+        <div style="font-weight:600; font-size:16px; color:#B6D2DB; margin-top:10px;">dans les agents IA et l'automatisation, infrastructures livrées clé en main</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="S3 Problème" style="padding:110px 24px;">
+  <div style="max-width:1160px; margin:0 auto; text-align:center;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0;">L'IA, on vous en parle <span style="color:#4FCBE0;">partout</span>.</h2>
+    <p style="font-size:clamp(19px,2.2vw,24px); font-weight:500; color:#B6D2DB; margin:18px 0 54px;">Mais concrètement, chez vous, rien n'a changé.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; text-align:left;">
+      <div style="background:#0B3849; border-radius:18px; padding:30px 30px 26px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; line-height:1; color:#4FCBE0;">«</div>
+        <p style="font-size:18px; font-weight:600; font-style:italic; line-height:1.55; margin:6px 0 0;">Le POC était bluffant. Il dort dans un coin depuis six mois.&nbsp;»</p>
+      </div>
+      <div style="background:#0B3849; border-radius:18px; padding:30px 30px 26px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; line-height:1; color:#4FCBE0;">«</div>
+        <p style="font-size:18px; font-weight:600; font-style:italic; line-height:1.55; margin:6px 0 0;">On empile les abonnements IA. Aucun ne se parle.&nbsp;»</p>
+      </div>
+      <div style="background:#0B3849; border-radius:18px; padding:30px 30px 26px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; line-height:1; color:#4FCBE0;">«</div>
+        <p style="font-size:18px; font-weight:600; font-style:italic; line-height:1.55; margin:6px 0 0;">L'équipe copie-colle toujours entre trois outils.&nbsp;»</p>
+      </div>
+    </div>
+    <p style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(24px,3vw,34px); line-height:1.35; max-width:900px; margin:60px auto 0;">Le problème n'est pas la technologie.<br><span style="color:#4FCBE0;">C'est qu'il manque quelqu'un dont c'est le métier de la faire tourner.</span></p>
+  </div>
+</section>
+
+<section id="methode" data-screen-label="S4 Méthode" style="padding:110px 24px 90px;">
+  <div style="max-width:1160px; margin:0 auto; text-align:center;">
+    <div style="display:flex; justify-content:center; gap:70px; flex-wrap:wrap; margin-bottom:90px;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:22px;">
+        <svg width="96" height="96" viewBox="0 0 96 96" fill="none"><circle cx="48" cy="48" r="34" stroke="#BFE8F2" stroke-width="4"/><path d="M48 30 V48 L61 56" stroke="#4FCBE0" stroke-width="4" stroke-linecap="round"/></svg>
+        <span style="background:rgba(63,197,222,.13); border:1px solid rgba(63,197,222,.4); color:#BFE8F2; font-weight:700; font-size:17px; border-radius:12px; padding:12px 26px;">+ d'heures récupérées</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:22px;">
+        <svg width="96" height="96" viewBox="0 0 96 96" fill="none"><rect x="22" y="52" width="12" height="20" rx="3" stroke="#BFE8F2" stroke-width="4"/><rect x="42" y="40" width="12" height="32" rx="3" stroke="#BFE8F2" stroke-width="4"/><rect x="62" y="26" width="12" height="46" rx="3" stroke="#4FCBE0" stroke-width="4"/></svg>
+        <span style="background:rgba(63,197,222,.13); border:1px solid rgba(63,197,222,.4); color:#BFE8F2; font-weight:700; font-size:17px; border-radius:12px; padding:12px 26px;">+ de leads traités</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:22px;">
+        <svg width="96" height="96" viewBox="0 0 96 96" fill="none"><path d="M76 48a28 28 0 1 1-8.2-19.8" stroke="#BFE8F2" stroke-width="4" stroke-linecap="round"/><path d="M76 22 V38 H60" stroke="#4FCBE0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="background:rgba(63,197,222,.13); border:1px solid rgba(63,197,222,.4); color:#BFE8F2; font-weight:700; font-size:17px; border-radius:12px; padding:12px 26px;">+ de process qui tournent</span>
+      </div>
+    </div>
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0;">Concevoir <span style="color:#4FCBE0;">→</span> Déployer <span style="color:#4FCBE0;">→</span> Opérer</h2>
+    <p style="font-size:clamp(18px,2vw,22px); font-weight:500; color:#B6D2DB; margin:16px 0 60px;">Le système en 3 temps qui installe l'IA dans votre entreprise, et la fait tourner.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; text-align:left;">
+      <div style="background:#0B3849; border-radius:24px; padding:22px 22px 34px; box-shadow:0 16px 40px rgba(0,10,15,.35);">
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:25px; margin:8px 8px 12px;">1. Concevoir</h3>
+        <ul style="margin:0 8px; padding-left:22px; font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+          <li>Diagnostic de vos process</li>
+          <li>Une roadmap priorisée par impact</li>
+          <li>Les bons systèmes, dans le bon ordre</li>
+        </ul>
+      </div>
+      <div style="background:#0B3849; border-radius:24px; padding:22px 22px 34px; box-shadow:0 16px 40px rgba(0,10,15,.35);">
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:25px; margin:8px 8px 12px;">2. Déployer</h3>
+        <ul style="margin:0 8px; padding-left:22px; font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+          <li>En production, pas en maquette</li>
+          <li>Branché à vos vrais outils</li>
+          <li>Votre équipe formée</li>
+        </ul>
+      </div>
+      <div style="background:#0B3849; border-radius:24px; padding:22px 22px 34px; box-shadow:0 0 0 3px #4FCBE0, 0 16px 40px rgba(15,126,158,.20); position:relative;">
+        <span style="position:absolute; top:-16px; right:22px; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); color:#fff; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:15px; border-radius:999px; padding:6px 18px;">La différence</span>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:25px; margin:8px 8px 12px;">3. Opérer</h3>
+        <ul style="margin:0 8px; padding-left:22px; font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+          <li>Supervision continue</li>
+          <li>Itérations chaque semaine</li>
+          <li>Je ne disparais pas après la livraison</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:17px; font-weight:600; color:#B6D2DB; max-width:760px; margin:44px auto 0;">Les prestataires classiques livrent, puis disparaissent. Opérer, c'est mon métier quotidien&nbsp;: je fais tourner vos systèmes et je les améliore chaque semaine.</p>
+    <a href="{{ calendly }}" style="display:inline-block; margin-top:36px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:#fff; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); border-radius:999px; padding:16px 38px; box-shadow:0 12px 28px rgba(15,126,158,.38);" style-hover="transform:translateY(-1px); color:#fff;">Réserver mon diagnostic (30&nbsp;min)</a>
+  </div>
+</section>
+
+<section data-screen-label="S5 Ce que je construis" style="padding:40px 24px 110px;">
+  <div style="max-width:1160px; margin:0 auto; text-align:center;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0;">Ce que je <span style="color:#4FCBE0;">construis</span> pour vous.</h2>
+    <p style="font-size:clamp(18px,2vw,22px); font-weight:500; color:#B6D2DB; margin:16px 0 60px;">Trois familles de systèmes. Un seul objectif&nbsp;: des résultats.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; text-align:left;">
+      <div style="background:#0B3849; border-radius:24px; padding:34px 32px; box-shadow:0 16px 40px rgba(0,10,15,.35);">
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:24px; margin:0 0 6px;">Agents conversationnels</h3>
+        <p style="font-size:16px; font-weight:600; color:#4FCBE0; margin:0 0 16px;">Acquisition &amp; support : WhatsApp, Instagram, téléphone</p>
+        <ul style="margin:0; padding-left:22px; font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+          <li>Réponse immédiate, 24h/24</li>
+          <li>Qualification automatique des demandes</li>
+        </ul>
+        <p style="font-size:16px; font-weight:700; margin:18px 0 0; border-top:2px solid rgba(191,232,242,.16); padding-top:16px;">Résultat type&nbsp;: <span style="color:#4FCBE0;">plus aucun lead sans réponse.</span></p>
+      </div>
+      <div style="background:#0B3849; border-radius:24px; padding:34px 32px; box-shadow:0 16px 40px rgba(0,10,15,.35);">
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:24px; margin:0 0 6px;">Opérations internes</h3>
+        <p style="font-size:16px; font-weight:600; color:#4FCBE0; margin:0 0 16px;">Onboarding, reporting, suivi client, administratif</p>
+        <ul style="margin:0; padding-left:22px; font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+          <li>Les tâches répétitives se font toutes seules</li>
+          <li>Vos outils actuels, enfin connectés</li>
+        </ul>
+        <p style="font-size:16px; font-weight:700; margin:18px 0 0; border-top:2px solid rgba(191,232,242,.16); padding-top:16px;">Résultat type&nbsp;: <span style="color:#4FCBE0;">des heures récupérées chaque semaine.</span></p>
+      </div>
+      <div style="background:#0B3849; border-radius:24px; padding:34px 32px; box-shadow:0 16px 40px rgba(0,10,15,.35);">
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:24px; margin:0 0 6px;">Systèmes IA internes</h3>
+        <p style="font-size:16px; font-weight:600; color:#4FCBE0; margin:0 0 16px;">Pensés pour des équipes non techniques</p>
+        <ul style="margin:0; padding-left:22px; font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+          <li>Votre équipe autonome, sans coder</li>
+          <li>Intégrés à vos habitudes de travail</li>
+        </ul>
+        <p style="font-size:16px; font-weight:700; margin:18px 0 0; border-top:2px solid rgba(191,232,242,.16); padding-top:16px;">Résultat type&nbsp;: <span style="color:#4FCBE0;">l'IA devient un réflexe, pas un projet.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="preuves" data-screen-label="S6 Preuves" style="padding:110px 24px;">
+  <div style="max-width:1160px; margin:0 auto; text-align:center;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0 0 54px;">Des <span style="color:#4FCBE0;">preuves</span>, pas des promesses.</h2>
+    <div style="max-width:860px; margin:0 auto; position:relative; aspect-ratio:16/9; border-radius:26px; background:radial-gradient(80% 90% at 50% 20%, #0C4254 0%, #062A38 70%); box-shadow:0 26px 60px rgba(0,10,15,.55); display:flex; align-items:center; justify-content:center;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+        <div style="width:80px; height:80px; border-radius:50%; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 12px rgba(63,197,222,.14);">
+          <span style="width:0; height:0; border-left:22px solid #fff; border-top:14px solid transparent; border-bottom:14px solid transparent; margin-left:6px; display:inline-block;"></span>
+        </div>
+        <span style="font-family:monospace; font-size:13px; letter-spacing:2px; color:rgba(255,255,255,.55); text-transform:uppercase;">témoignage vidéo client en cours de production</span>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:26px; margin-top:30px; text-align:left; max-width:860px; margin-left:auto; margin-right:auto;">
+      <div style="border:2px dashed rgba(191,232,242,.3); border-radius:20px; padding:30px; background:rgba(255,255,255,.04);">
+        <span style="font-family:monospace; font-size:13px; letter-spacing:2px; color:#4FCBE0;">[CAS_1]</span>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:21px; margin:10px 0 8px;">Étude de cas à venir</h3>
+        <p style="font-size:16px; font-weight:600; color:#A9C6D0; margin:0; line-height:1.6;">Contexte, système déployé, résultats mesurés. Rempli avec du vrai, rien d'inventé.</p>
+      </div>
+      <div style="border:2px dashed rgba(191,232,242,.3); border-radius:20px; padding:30px; background:rgba(255,255,255,.04);">
+        <span style="font-family:monospace; font-size:13px; letter-spacing:2px; color:#4FCBE0;">[CAS_2]</span>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:21px; margin:10px 0 8px;">Étude de cas à venir</h3>
+        <p style="font-size:16px; font-weight:600; color:#A9C6D0; margin:0; line-height:1.6;">Contexte, système déployé, résultats mesurés. Rempli avec du vrai, rien d'inventé.</p>
+      </div>
+    </div>
+    <a href="{{ calendly }}" style="display:inline-block; margin-top:48px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:#fff; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); border-radius:999px; padding:16px 38px; box-shadow:0 12px 28px rgba(15,126,158,.38);" style-hover="transform:translateY(-1px); color:#fff;">Réserver mon diagnostic (30&nbsp;min)</a>
+  </div>
+</section>
+
+<section data-screen-label="S7 Process" style="padding:110px 24px;">
+  <div style="max-width:1160px; margin:0 auto; text-align:center;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0 0 16px;">Le chemin en <span style="color:#4FCBE0;">4 temps</span>.</h2>
+    <p style="font-size:clamp(18px,2vw,22px); font-weight:500; color:#B6D2DB; margin:0 0 60px;">Vous voyez où vous allez, à chaque étape.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; text-align:left;">
+      <div style="background:#0B3849; border-radius:20px; padding:30px 28px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; color:#4FCBE0; line-height:1;">1</div>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:21px; margin:14px 0 8px;">Diagnostic (30&nbsp;min)</h3>
+        <p style="font-size:16px; font-weight:600; color:#A9C6D0; margin:0; line-height:1.6;">On cartographie vos process et les gains possibles.</p>
+      </div>
+      <div style="background:#0B3849; border-radius:20px; padding:30px 28px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; color:#4FCBE0; line-height:1;">2</div>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:21px; margin:14px 0 8px;">Roadmap priorisée</h3>
+        <p style="font-size:16px; font-weight:600; color:#A9C6D0; margin:0; line-height:1.6;">Un plan clair, priorisé par impact. Il vous appartient, avec ou sans moi.</p>
+      </div>
+      <div style="background:#0B3849; border-radius:20px; padding:30px 28px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; color:#4FCBE0; line-height:1;">3</div>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:21px; margin:14px 0 8px;">Premier système en production</h3>
+        <p style="font-size:16px; font-weight:600; color:#A9C6D0; margin:0; line-height:1.6;">En 2 à 4 semaines, branché à vos outils, utilisé par votre équipe.</p>
+      </div>
+      <div style="background:#0B3849; border-radius:20px; padding:30px 28px; box-shadow:0 12px 30px rgba(0,10,15,.35);">
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:44px; color:#4FCBE0; line-height:1;">4</div>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:21px; margin:14px 0 8px;">Opération mensuelle</h3>
+        <p style="font-size:16px; font-weight:600; color:#A9C6D0; margin:0; line-height:1.6;">Maintenance, itérations, nouveaux systèmes. Ça tourne, et ça s'améliore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="offres" data-screen-label="S8 Offre" style="padding:40px 24px 110px;">
+  <div style="max-width:1160px; margin:0 auto;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0; text-align:center;">Pour des systèmes <span style="color:#4FCBE0;">en production</span>.</h2>
+    <p style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:clamp(22px,2.6vw,32px); margin:10px 0 54px; text-align:center;">Deux façons de travailler ensemble.</p>
+    <div style="background:linear-gradient(135deg,#0B3E52 0%,#0E4658 100%); border:1px solid rgba(63,197,222,.25); border-radius:28px; padding:clamp(34px,5vw,60px); display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(34px,4vw,60px); color:#fff; box-shadow:0 30px 70px rgba(0,10,15,.5);">
+      <div>
+        <p style="font-family:'Baloo 2',sans-serif; font-weight:600; font-size:20px; margin:0; color:rgba(255,255,255,.75);">Pour démarrer</p>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,3.4vw,44px); margin:2px 0 18px;">Le Premier Système</h3>
+        <p style="font-size:17px; font-weight:500; line-height:1.65; color:rgba(255,255,255,.85); margin:0 0 24px;">Diagnostic, conception et déploiement en production d'un premier système à fort impact : celui qui change votre quotidien le plus vite.</p>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:17px; font-weight:600;">
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="color:#3FC5DE; font-weight:800;">✓</span><span>Le diagnostic et la roadmap priorisée</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="color:#3FC5DE; font-weight:800;">✓</span><span>Un système à fort impact, en production en 2 à 4 semaines</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="color:#3FC5DE; font-weight:800;">✓</span><span>Branché à vos outils, votre équipe formée</span></div>
+        </div>
+        <a href="{{ calendly }}" style="display:inline-block; margin-top:34px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:#052430; background:#EAF6F9; border-radius:999px; padding:16px 40px;" style-hover="background:#fff; color:#052430; transform:translateY(-1px);">Je prends mon RDV →</a>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,.14); padding-left:clamp(0px,4vw,60px);">
+        <p style="font-family:'Baloo 2',sans-serif; font-weight:600; font-size:20px; margin:0; color:rgba(255,255,255,.75);">Pour durer</p>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,3.4vw,44px); margin:2px 0 18px;">AI Manager mensuel</h3>
+        <p style="font-size:17px; font-weight:500; line-height:1.65; color:rgba(255,255,255,.85); margin:0 0 24px;">Vos systèmes maintenus, opérés et améliorés chaque mois. Votre département IA, sans recruter.</p>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:17px; font-weight:600;">
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="color:#3FC5DE; font-weight:800;">✓</span><span>Supervision et itérations hebdomadaires</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="color:#3FC5DE; font-weight:800;">✓</span><span>Nouveaux systèmes au fil de la roadmap</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="color:#3FC5DE; font-weight:800;">✓</span><span>Canal direct : vous parlez à moi, pas à un ticket</span></div>
+        </div>
+        <p style="font-size:15px; font-weight:600; font-style:italic; color:rgba(255,255,255,.65); margin:30px 0 0;">Accompagnement sur-mesure. Nombre de places limité chaque mois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="S9 Qui je suis" style="padding:110px 24px;">
+  <div style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:clamp(34px,5vw,70px); align-items:center;">
+    <div style="position:relative; max-width:520px; justify-self:center;">
+      <img src="assets/portrait.png" alt="Yassir Larabi" style="width:100%; border-radius:32px; display:block; box-shadow:0 26px 60px rgba(0,10,15,.55);">
+      <div style="position:absolute; bottom:26px; right:-16px; background:#FAFDFE; color:#062A38; border-radius:999px; padding:12px 22px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:17px; box-shadow:0 14px 32px rgba(0,10,15,.5);">AI Manager</div>
+    </div>
+    <div>
+      <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,48px); margin:0 0 22px;">Mais <span style="color:#4FCBE0;">qui suis-je</span> pour vous dire ça&nbsp;?</h2>
+      <p style="font-size:18px; font-weight:600; line-height:1.65; margin:0 0 18px;">Moi, c'est Yassir. Faire tourner des systèmes IA, c'est mon quotidien.</p>
+      <div style="font-size:17px; font-weight:600; line-height:1.9; color:#C9DEE6;">
+        <div>→ AI Manager chez Smart Funnel, agence IA à 200&nbsp;K€/mois, des systèmes utilisés chaque semaine par toute une équipe</div>
+        <div>→ Fondateur de mon activité d'automatisation IA depuis 2023</div>
+        <div>→ Créateur de VocalFlow, solution d'IA vocale : +100&nbsp;000 appels traités</div>
+      </div>
+      <p style="font-size:18px; font-weight:600; line-height:1.65; margin:22px 0 0;">Je crois que chaque PME française peut avoir son département IA, sans recruter. Mon métier, c'est de le faire tourner.</p>
+      <a href="{{ calendly }}" style="display:inline-block; margin-top:32px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:#fff; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); border-radius:999px; padding:16px 38px; box-shadow:0 12px 28px rgba(15,126,158,.38);" style-hover="transform:translateY(-1px); color:#fff;">Réserver mon diagnostic (30&nbsp;min)</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" data-screen-label="S10 FAQ" style="padding:110px 24px;">
+  <div style="max-width:1160px; margin:0 auto;">
+    <h2 style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(32px,4.2vw,50px); margin:0 0 54px; text-align:center;">Vous avez des <span style="color:#4FCBE0;">questions</span>&nbsp;?</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:clamp(34px,4vw,56px); align-items:start;">
+      <div>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:28px; margin:0 0 24px;">Voici mes réponses, franches.</h3>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+            <div style="background:#0B3849; border-radius:14px; padding:22px 26px; box-shadow:0 10px 26px rgba(0,10,15,.35); cursor:pointer;" onClick="{{ f.onToggle }}">
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:16px;">
+                <span style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:19px; color:{{ f.qColor }};">{{ f.q }}</span>
+                <span style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:22px; color:#4FCBE0; flex-shrink:0;">{{ f.symbol }}</span>
+              </div>
+              <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                <p style="font-size:16px; font-weight:600; color:#A9C6D0; line-height:1.65; margin:14px 0 0;">{{ f.a }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Baloo 2',sans-serif; font-weight:700; font-size:28px; margin:0 0 24px;">Réservez votre diagnostic de 30&nbsp;min.</h3>
+        <div style="background:linear-gradient(160deg,#0B3E52,#0E4658); border:1px solid rgba(63,197,222,.25); border-radius:22px; padding:36px 34px; color:#fff; box-shadow:0 22px 50px rgba(0,10,15,.5);">
+          <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:26px;">Diagnostic gratuit · 30&nbsp;min</div>
+          <div style="display:flex; flex-direction:column; gap:10px; margin:20px 0 26px; font-size:16px; font-weight:600; color:rgba(255,255,255,.85);">
+            <div style="display:flex; gap:12px;"><span style="color:#3FC5DE;">✓</span><span>En visio, sans préparation de votre côté</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#3FC5DE;">✓</span><span>On cartographie vos process ensemble</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#3FC5DE;">✓</span><span>Vous repartez avec votre roadmap priorisée</span></div>
+          </div>
+          <div style="border-radius:14px; overflow:hidden; background:#fff;">
+            <iframe src="https://calendly.com/lbiagency/diagnostic-ia?hide_gdpr_banner=1&hide_landing_page_details=1" title="Calendly" loading="lazy" style="display:block; border:none; width:100%; height:600px;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="S11 CTA final + footer" style="padding:20px 24px 28px;">
+  <div style="position:relative; overflow:hidden; max-width:1360px; margin:0 auto; background:linear-gradient(160deg,#0A3A4C 0%,#10586E 100%); border:1px solid rgba(63,197,222,.2); border-radius:30px; padding:clamp(44px,6vw,72px) clamp(28px,5vw,64px); color:#fff;">
+    <div style="position:absolute; bottom:-90px; left:-16px; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(160px,24vw,330px); line-height:1; color:rgba(255,255,255,.05); pointer-events:none; white-space:nowrap;">yassir.</div>
+    <div style="position:relative; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+      <div style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:30px;">yassir<span style="color:#3FC5DE;">.</span></div>
+      <a href="https://www.linkedin.com/in/yassir-larabi/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; border:2px solid rgba(255,255,255,.4); border-radius:999px; padding:10px 24px; font-weight:700; font-size:16px; color:#fff;" style-hover="border-color:#3FC5DE; color:#3FC5DE;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn ↗</a>
+    </div>
+    <div style="position:relative; text-align:center; padding:clamp(36px,5vw,64px) 0;">
+      <p style="font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(30px,4vw,48px); line-height:1.2; margin:0;">Repartez avec votre <span style="color:#3FC5DE;">roadmap priorisée</span>.<br>Qu'on travaille ensemble ou non.</p>
+      <a href="{{ calendly }}" style="display:inline-block; margin-top:34px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:20px; color:#fff; background:linear-gradient(180deg,#3FC5DE,#0F7E9E); border-radius:999px; padding:18px 44px; box-shadow:0 14px 32px rgba(15,126,158,.40);" style-hover="transform:translateY(-1px); color:#fff;">Réserver mon diagnostic (30&nbsp;min)</a>
+      <p style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6); margin:18px 0 0;">Des systèmes en production, pas des démos.</p>
+    </div>
+    <div style="position:relative; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.14); padding-top:26px;">
+      <div style="display:flex; gap:26px; font-weight:600; font-size:15px;">
+        <a href="#methode" style="color:rgba(255,255,255,.75);" style-hover="color:#3FC5DE;">La méthode</a>
+        <a href="#offres" style="color:rgba(255,255,255,.75);" style-hover="color:#3FC5DE;">Mes offres</a>
+        <a href="#faq" style="color:rgba(255,255,255,.75);" style-hover="color:#3FC5DE;">FAQ</a>
+      </div>
+      <div style="display:flex; gap:26px; align-items:center; font-weight:600; font-size:14px; color:rgba(255,255,255,.55); flex-wrap:wrap;">
+        <span>LBI Agency, micro-entreprise française</span>
+        <a href="#" style="color:rgba(255,255,255,.75); text-decoration:underline;" style-hover="color:#3FC5DE;">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;calendlyUrl&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://calendly.com/lbiagency/diagnostic-ia&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Liens&quot;}}">
+class Component extends DCLogic {
+  state = { open: 0 };
+  renderVals() {
+    const calendly = this.props.calendlyUrl ?? "https://calendly.com/lbiagency/diagnostic-ia";
+    const data = [
+      { q: "« On a déjà testé ChatGPT, un POC. Pourquoi ça marcherait cette fois ? »", a: "Un POC démontre. Un système opéré produit. La différence, ce n'est pas l'outil : c'est quelqu'un dont c'est le métier de le faire tourner, semaine après semaine." },
+      { q: "« Combien de temps avant un premier résultat ? »", a: "Votre premier système est en production en 2 à 4 semaines. Pas une maquette : un système branché à vos outils, utilisé par votre équipe." },
+      { q: "« Et si ça se trompe, si ça casse ? »", a: "C'est supervisé et opéré : garde-fous, monitoring, correction en continu. Quand quelque chose dérive, je le vois, et je le corrige." },
+      { q: "« On n'est pas une boîte technique. »", a: "C'est exactement pour ça que c'est conçu. Votre équipe n'a rien à coder : les systèmes s'intègrent à vos outils existants." },
+      { q: "« Quels outils utilisez-vous ? »", a: "Ceux qui servent votre résultat. Les choisir, c'est mon métier, pas le vôtre." },
+      { q: "« Combien ça coûte ? »", a: "C'est du sur-mesure, cadré après le diagnostic. L'investissement se dimensionne sur le ROI du système, pas l'inverse." }
+    ];
+    const faqs = data.map((f, i) => ({
+      ...f,
+      open: this.state.open === i,
+      symbol: this.state.open === i ? "✕" : "+",
+      qColor: this.state.open === i ? "#4FCBE0" : "#EAF6F9",
+      onToggle: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
+    }));
+    return { calendly, faqs };
+  }
+}
+</script>
+</body>
+</html>

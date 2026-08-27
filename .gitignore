@@ -1,0 +1,9 @@
+# Dépendances / outils locaux
+node_modules/
+.vercel/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
