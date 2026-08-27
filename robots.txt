@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Une fois le domaine connu, ajouter :
-# Sitemap: https://VOTRE-DOMAINE/sitemap.xml
+# Site en ligne : https://yassir.lbiagency.fr (page unique, pas de sitemap nécessaire)

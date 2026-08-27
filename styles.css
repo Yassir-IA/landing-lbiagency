@@ -181,7 +181,8 @@ html.no-splash .splash { display: none; }
 /* ---------- Navigation ---------- */
 .nav-wrap {
   position: fixed; top: 18px; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: center; padding: 0 20px;
+  display: flex; justify-content: center;
+  padding: 0 max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left)); /* encoche iPhone en paysage */
 }
 .nav {
   animation: navIn .8s var(--ease-out) calc(var(--intro) - .1s) both;
@@ -657,12 +658,28 @@ html.no-splash .splash { display: none; }
   .stats__row { gap: 22px; }
   .stat--left, .stat--right { transform: rotate(-2deg); }
   .stat--right { transform: rotate(2deg); }
-  .benefits { gap: 36px; margin-bottom: 60px; }
+  /* Badge : le point suit le texte (sinon il flotte au milieu des deux lignes) */
+  .badge { display: inline-block; text-align: center; font-size: 15px; line-height: 1.45; padding: 9px 18px; }
+  .badge__dot { vertical-align: middle; margin: -2px 8px 0 0; }
+  .hero__proof { font-size: 16px; }
+  /* Boutons du hero : empilés, pleine largeur (max 420px) */
+  .hero__ctas { flex-direction: column; width: 100%; max-width: 420px; gap: 12px; }
+  .hero__ctas .btn { width: 100%; }
+  /* Bénéfices : une rangée icône + pastille par bénéfice */
+  .benefits { flex-direction: column; align-items: stretch; gap: 14px; max-width: 360px; margin: 0 auto 56px; }
+  .benefit { flex-direction: row; align-items: center; gap: 14px; text-align: left; }
+  .benefit svg { width: 56px; height: 56px; flex-shrink: 0; }
+  .benefit__pill { flex: 1; font-size: 16px; padding: 12px 18px; }
   .lead { margin-bottom: 40px; }
   .btn { font-size: 17px; }
   .btn--primary, .btn--light { padding: 15px 28px; }
   .btn--outline { padding: 13px 26px; }
-  .booking { padding: 26px 18px; }
+  /* CTA final du footer : même gabarit que le bouton du hero, pleine largeur (évite le libellé sur 2 lignes) */
+  .btn--xl { font-size: 17px; padding: 15px 28px; width: 100%; max-width: 420px; box-shadow: var(--shadow-cta); }
+  /* Carte de réservation : compacte, widget Calendly bord à bord en bas de carte */
+  .booking { padding: 24px 16px 16px; }
+  .booking__title { font-size: 23px; }
+  .booking__embed { margin: 0 -15px -15px; border-radius: 0 0 20px 20px; }
   .faq__item { padding: 18px 20px; }
   .faq__q-text { font-size: 17px; }
   .footer__card { border-radius: 22px; }

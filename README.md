@@ -44,23 +44,24 @@ Chaque `git push` sur la branche principale redéploie automatiquement.
 Après le premier déploiement, vérifier les en-têtes (Git Bash) :
 
 ```bash
-curl -sI https://VOTRE-DOMAINE/assets/fonts/baloo2.woff2 | grep -i cache-control   # attendu : max-age=31536000, immutable
-curl -sI https://VOTRE-DOMAINE/ | grep -i content-security-policy                 # attendu : la CSP de vercel.json
+curl -sI https://yassir.lbiagency.fr/assets/fonts/baloo2.woff2 | grep -i cache-control   # attendu : max-age=31536000, immutable
+curl -sI https://yassir.lbiagency.fr/ | grep -i content-security-policy                 # attendu : la CSP de vercel.json
 ```
 
-## Dès que le domaine est connu
+## Domaine
 
-1. Dans `index.html` (`<head>`) : décommenter le bloc *« À FAIRE dès que le domaine est connu »* et remplacer
-   `VOTRE-DOMAINE` (canonical, `og:url`, `og:image` → aperçus LinkedIn/WhatsApp avec `assets/og.jpg`).
-2. Dans `robots.txt` : ligne `Sitemap:` (optionnel pour une page unique).
+Site en ligne : **https://yassir.lbiagency.fr** (`canonical`, `og:url`, `og:image` et le JSON-LD pointent dessus ;
+`landing-lbiagency.vercel.app` redirige vers lui via `vercel.json`). Si le domaine change : remplacer `yassir.lbiagency.fr`
+dans `index.html` (4 occurrences) et dans la redirection de `vercel.json`.
 
 ## À personnaliser
 
 - **Lien de réservation** : `CALENDLY_URL` dans `main.js` (les `<a data-calendly>` ont aussi l'URL en dur, pour fonctionner sans JS).
 - **Vidéo hero** : attribut `data-src` de l'`<iframe>` Gumlet (section `#hero`, + repli `<noscript>`). Le lecteur (≈ 0,5 Mo)
   n'est chargé qu'après l'entrée animée de la carte, pour ne pas ralentir l'affichage du titre.
-- **Calendly** : `data-src` de l'`<iframe>` de la section `#faq`. Le widget inline (≈ 3 Mo) n'est chargé que sur
-  ordinateur/tablette (≥ 641 px) ; sur téléphone, un bouton « Choisir mon créneau » ouvre la page Calendly.
+- **Calendly** : `data-src` de l'`<iframe>` de la section `#faq`. Widget inline sur tous les écrans, chargé seulement
+  à l'approche de la section, hauteur ajustée automatiquement (message `calendly.page_height`). Sans JavaScript,
+  un bouton vers la page Calendly s'affiche à la place.
 - **Témoignage vidéo + études de cas** (`#preuves`) : placeholders `[CAS_1]` / `[CAS_2]`.
 - **Mentions légales** : lien du footer (`href="#"` pour l'instant — à créer, obligatoire en France).
 - **Durée de l'intro** : variable `--intro` dans `styles.css` (1.15s actuel ; 1.3s = maquette ; 0.6s = intro rapide).

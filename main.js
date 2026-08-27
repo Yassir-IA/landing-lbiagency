@@ -46,14 +46,21 @@
     whenLoaded(loadVideo);
   }
 
-  /* ---- Calendly : le widget inline pèse ≈ 3 Mo. Sur ordinateur / tablette (≥ 641px) il est injecté
-     (chargement paresseux) ; sur téléphone on garde le bouton vers la page Calendly (bien plus rapide,
-     et pas de défilement imbriqué). Sans JS : le bouton reste affiché partout. */
+  /* ---- Calendly : widget inline sur tous les écrans, chargé paresseusement (à l'approche de la section).
+     Avec embed_type/embed_domain, Calendly envoie sa hauteur au parent (postMessage « calendly.page_height ») :
+     l'iframe est redimensionnée automatiquement → pas de défilement imbriqué sur mobile quand la liste des
+     créneaux apparaît sous le calendrier. Sans JS : le bouton vers la page Calendly reste affiché. */
   var booking = document.querySelector('.booking');
   var bookingFrame = document.querySelector('.booking__embed iframe[data-src]');
-  if (booking && bookingFrame && window.matchMedia('(min-width: 641px)').matches) {
-    bookingFrame.setAttribute('src', bookingFrame.getAttribute('data-src'));
+  if (booking && bookingFrame) {
+    var host = window.location.hostname || 'localhost';
+    bookingFrame.setAttribute('src', bookingFrame.getAttribute('data-src') + '&embed_type=Inline&embed_domain=' + encodeURIComponent(host));
     booking.classList.add('has-embed');
+    window.addEventListener('message', function (event) {
+      if (event.origin !== 'https://calendly.com' || !event.data || event.data.event !== 'calendly.page_height') return;
+      var h = parseInt(event.data.payload && event.data.payload.height, 10);
+      if (h >= 300) bookingFrame.style.height = h + 'px';
+    });
   }
 
   /* ---- FAQ : accordéon ---- */
