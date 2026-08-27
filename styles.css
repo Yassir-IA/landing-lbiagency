@@ -674,8 +674,10 @@ html.no-splash .splash { display: none; }
   .btn { font-size: 17px; }
   .btn--primary, .btn--light { padding: 15px 28px; }
   .btn--outline { padding: 13px 26px; }
-  /* CTA final du footer : même gabarit que le bouton du hero, pleine largeur (évite le libellé sur 2 lignes) */
-  .btn--xl { font-size: 17px; padding: 15px 28px; width: 100%; max-width: 420px; box-shadow: var(--shadow-cta); }
+  /* Footer : marges resserrées pour que le CTA final tienne sur une ligne, pleine largeur comme celui du hero */
+  .footer { padding: 20px 12px 24px; }
+  .footer__card { padding: 40px 20px 28px; }
+  .btn--xl { font-size: 17px; padding: 15px 16px; width: 100%; max-width: 420px; box-shadow: var(--shadow-cta); }
   /* Carte de réservation : compacte, widget Calendly bord à bord en bas de carte */
   .booking { padding: 24px 16px 16px; }
   .booking__title { font-size: 23px; }
