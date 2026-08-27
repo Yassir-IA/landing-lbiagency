@@ -459,7 +459,7 @@ html.no-splash .splash { display: none; }
   background: linear-gradient(135deg, #0B3E52 0%, #0E4658 100%);
   border: 1px solid rgba(63, 197, 222, .25); border-radius: 28px;
   padding: clamp(34px, 5vw, 60px);
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  display: grid; grid-template-columns: 1fr 1fr; /* 2 colonnes ≥ 805px (colonnes ≥ 320px comme la maquette), 1 colonne en dessous */
   gap: clamp(34px, 4vw, 60px);
   color: #fff; box-shadow: 0 30px 70px rgba(0, 10, 15, .5);
 }
@@ -639,7 +639,20 @@ html.no-splash .splash { display: none; }
   .hero__sep { display: none; }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 883px) {
+  /* Tablette : les 3 bénéfices ne tiennent pas sur une ligne → une rangée icône + pastille par bénéfice */
+  .benefits { flex-direction: column; align-items: stretch; gap: 14px; max-width: 360px; margin: 0 auto 60px; }
+  .benefit { flex-direction: row; align-items: center; gap: 14px; text-align: left; }
+  .benefit svg { width: 56px; height: 56px; flex-shrink: 0; }
+  .benefit__pill { flex: 1; font-size: 16px; padding: 12px 18px; }
+}
+
+@media (min-width: 805px) and (max-width: 900px) {
+  .offer__title { font-size: 28px; } /* évite « AI Manager mensuel » sur 2 lignes (colonnes étroites) */
+}
+
+@media (max-width: 804px) {
+  .offer__card { grid-template-columns: 1fr; }
   .offer__col--2 {
     border-left: 0; padding-left: 0;
     border-top: 1px solid rgba(255, 255, 255, .14); padding-top: clamp(34px, 4vw, 60px);
@@ -665,11 +678,7 @@ html.no-splash .splash { display: none; }
   /* Boutons du hero : empilés, pleine largeur (max 420px) */
   .hero__ctas { flex-direction: column; width: 100%; max-width: 420px; gap: 12px; }
   .hero__ctas .btn { width: 100%; }
-  /* Bénéfices : une rangée icône + pastille par bénéfice */
-  .benefits { flex-direction: column; align-items: stretch; gap: 14px; max-width: 360px; margin: 0 auto 56px; }
-  .benefit { flex-direction: row; align-items: center; gap: 14px; text-align: left; }
-  .benefit svg { width: 56px; height: 56px; flex-shrink: 0; }
-  .benefit__pill { flex: 1; font-size: 16px; padding: 12px 18px; }
+  .benefits { margin-bottom: 56px; } /* rangées icône + pastille : voir le bloc ≤ 883px */
   .lead { margin-bottom: 40px; }
   .btn { font-size: 17px; }
   .btn--primary, .btn--light { padding: 15px 28px; }
