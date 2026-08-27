@@ -10,7 +10,7 @@ Site statique (HTML / CSS / JS vanilla, **zéro build**) implémentant la maquet
 | `index.html` | La page (11 sections : hero, preuves flash, problème, méthode, ce que je construis, preuves, process, offre, qui je suis, FAQ, CTA final + footer) |
 | `styles.css` | Styles (palette en variables CSS, `@font-face`, responsive, `prefers-reduced-motion`) |
 | `main.js` | Accordéon FAQ, lien Calendly centralisé, injection différée de la vidéo, fin d'animations |
-| `splash.js` | Splash d'ouverture joué une fois par session (chargé dans `<head>`) |
+| `splash.js` | Option « splash une seule fois par session » (désactivée : le splash joue à chaque visite, comme la maquette) |
 | `assets/fonts/` | Baloo 2 + Quicksand auto-hébergées (fontes variables woff2, licence OFL jointe) |
 | `assets/portrait.webp` / `.jpg` | Portrait optimisé (1100 px) |
 | `assets/og.jpg` | Image d'aperçu 1200×630 pour LinkedIn / WhatsApp (à activer, voir ci-dessous) |
@@ -64,7 +64,9 @@ curl -sI https://VOTRE-DOMAINE/ | grep -i content-security-policy               
 - **Témoignage vidéo + études de cas** (`#preuves`) : placeholders `[CAS_1]` / `[CAS_2]`.
 - **Mentions légales** : lien du footer (`href="#"` pour l'instant — à créer, obligatoire en France).
 - **Durée de l'intro** : variable `--intro` dans `styles.css` (1.15s actuel ; 1.3s = maquette ; 0.6s = intro rapide).
-  Splash à chaque visite : `SPLASH_ONCE_PER_SESSION = false` dans `splash.js`.
+  Splash une seule fois par session d'onglet (visites suivantes plus rapides) : `SPLASH_ONCE_PER_SESSION = true` dans `splash.js`.
+- **Mouvement réduit** (Windows « Effets d'animation » désactivé, macOS « Réduire les animations ») : l'intro joue en fondus seuls,
+  sans déplacement ni flou. Pour voir la version complète sur son propre PC : Paramètres Windows → Accessibilité → Effets visuels → Effets d'animation.
 - **Remplacer une image** (`assets/`) : renommer le fichier (les assets sont mis en cache 30 jours, les polices 1 an).
 
 ## Sécurité / vie privée

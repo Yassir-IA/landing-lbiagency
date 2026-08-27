@@ -1,8 +1,9 @@
-/* Splash d'ouverture : joué une seule fois par session de navigation (onglet).
-   Chargé de façon synchrone dans <head> pour poser la classe avant le premier rendu.
-   Mettre SPLASH_ONCE_PER_SESSION à false pour rejouer le splash à chaque chargement (comportement de la maquette). */
+/* Splash d'ouverture : joué à chaque chargement, comme dans la maquette Claude Design.
+   Option : mettre SPLASH_ONCE_PER_SESSION à true pour ne le jouer qu'une fois par session d'onglet
+   (les visites suivantes affichent le contenu immédiatement). Chargé de façon synchrone dans <head>
+   pour poser la classe html.no-splash avant le premier rendu. */
 (function () {
-  var SPLASH_ONCE_PER_SESSION = true;
+  var SPLASH_ONCE_PER_SESSION = false;
   if (!SPLASH_ONCE_PER_SESSION) return;
   try {
     var key = 'yl-splash-seen';
